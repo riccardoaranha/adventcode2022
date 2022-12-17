@@ -7,6 +7,7 @@ from day04.day04 import main as day04
 from day05.day05 import main as day05
 from day06.day06 import main as day06
 from day07.day07 import main as day07
+from day08.day08 import main as day08
 
 def dayXX(day, e1, e2, i1, i2):
     f = open('day%02d/example.txt' % day, 'r')
@@ -35,3 +36,6 @@ def test_day06():
 
 def test_day07():
     dayXX(7, 95437, 24933642, 2031851, 2568781)
+
+def test_day08():
+    dayXX(8, 21, 8, 1543, 595080)

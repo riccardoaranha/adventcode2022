@@ -1,9 +1,6 @@
 import os, sys, io, argparse
 
-stacks1 = []
-stacks2 = None
-
-def load_line(line):
+def load_line(line, stacks1, stacks2):
     line = line[0:-1]
     chunk_size = 4
     x = [ line[i:i+chunk_size] for i in range(0, len(line), chunk_size) ]
@@ -18,10 +15,13 @@ def load_line(line):
         i += 1
 
 def main(f: io.TextIOWrapper):
+    stacks1 = []
+    stacks2 = None
+
     lines = f.readlines()
     for line in lines:
         if '[' in line:
-            load_line(line)    
+            load_line(line, stacks1, stacks2)    
         elif not 'move' in line and stacks2 is None:
             stacks2 = []
             for stack in stacks1:
@@ -51,6 +51,8 @@ def main(f: io.TextIOWrapper):
     print(finals1)    
     print("Top of pile, CrateMover 9001:")
     print(finals2)
+
+    return {'part1': finals1, 'part2' : finals2}
 
 def is_valid_file(parser, arg):
     if not os.path.exists(arg):

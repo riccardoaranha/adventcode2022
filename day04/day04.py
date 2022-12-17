@@ -43,7 +43,8 @@ def main(f: io.TextIOWrapper):
     
     print("Total contained: %d" % contained)
     print("Total overlapped: %d" % overlapped)
-
+    
+    return {'part1': contained, 'part2' : overlapped}
 
 def is_valid_file(parser, arg):
     if not os.path.exists(arg):

@@ -34,6 +34,7 @@ def main(f: io.TextIOWrapper):
     print("Total prio: %d" % total_prio)
     print("Total group: %d" % total_group)
 
+    return {'part1': total_prio, 'part2' : total_group}
 
 def is_valid_file(parser, arg):
     if not os.path.exists(arg):

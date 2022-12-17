@@ -2,8 +2,11 @@ import os, sys, io, argparse
 
 
 def main(f: io.TextIOWrapper):
-    print(f.read())
+    lines = f.readlines()
+    for line in lines:
+        line = line[0:-1]
     
+    return {'part1': None, 'part2' : None}
 
 
 def is_valid_file(parser, arg):

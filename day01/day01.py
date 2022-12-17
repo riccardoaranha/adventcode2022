@@ -15,6 +15,7 @@ def printTopX(list : SortedList, x):
         print("[%dº][id=%d]: %d" % (i, qty.id, qty.value))
     print("Total Top %d: %d" % (x, total))
     print("--------------------------")
+    return total
     
 def main(f: io.TextIOWrapper):
     lines = f.readlines()
@@ -25,7 +26,8 @@ def main(f: io.TextIOWrapper):
     id = 0
 
     for line in lines:
-        if line == "\n":
+        line = line[0:-1]
+        if line == "":
             qties.add(Pair(curElf, id))
             id += 1
             curElf = 0
@@ -33,11 +35,15 @@ def main(f: io.TextIOWrapper):
             current = int(line)
             curElf += current
             totalCals += current
+    qties.add(Pair(curElf, id))
+    id += 1
+    curElf = 0
 
-    printTopX(qties, 1)
-    printTopX(qties, 3)
+    total1 = printTopX(qties, 1)
+    total2 = printTopX(qties, 3)
     print("Elfs count: %d" % qties.__len__())
     print("Total Cals: %d" % totalCals)
+    return {'part1': total1, 'part2' : total2}
 
 
 def is_valid_file(parser, arg):

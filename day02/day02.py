@@ -97,6 +97,9 @@ def main(f: io.TextIOWrapper):
         step2['championship_winner'] = 'Draw'
     pprint.pprint(step2)
     print("--------------------------")
+
+    return {'part1': option['score_me'], 'part2' : step2['score_me']}
+
 def is_valid_file(parser, arg):
     if not os.path.exists(arg):
         parser.error("The file %s does not exist!" % arg)

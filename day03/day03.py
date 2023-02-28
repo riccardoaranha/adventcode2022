@@ -13,14 +13,14 @@ def main(f: io.TextIOWrapper):
         comp1 = line[:mid]
         comp2 = line[mid:]
         group[i] = line
-        print(i)
+        #print(i)
         i += 1
 
         for char in comp1:
             if char in comp2:
                 prio = ord(char) - ord('a') + 1 if (char >= 'a' and char <= 'z') else ord(char) - ord('A') + 27
                 total_prio += prio
-                print(char, prio)
+                #print(char, prio)
                 break
         if i == 3:
             i = 0
@@ -29,11 +29,11 @@ def main(f: io.TextIOWrapper):
                     if char in group[2]:
                         badge = ord(char) - ord('a') + 1 if (char >= 'a' and char <= 'z') else ord(char) - ord('A') + 27
                         total_group += badge
-                        print("Group:", char, badge)
+                        #print("Group:", char, badge)
                         break
-    print("Total prio: %d" % total_prio)
-    print("Total group: %d" % total_group)
-
+    #print("Total prio: %d" % total_prio)
+    #print("Total group: %d" % total_group)
+    print({'part1': total_prio, 'part2' : total_group})
     return {'part1': total_prio, 'part2' : total_group}
 
 def is_valid_file(parser, arg):

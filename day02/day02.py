@@ -1,6 +1,5 @@
 import os, sys, io, argparse
-import itertools
-import pprint
+#import pprint
 
 ROCK = 'rock'
 PAPER = 'paper'
@@ -86,18 +85,19 @@ def main(f: io.TextIOWrapper):
             option['championship_winner'] = 'Opponent'
         else:
             option['championship_winner'] = 'Draw'
-        pprint.pprint(option)
-    print("--------------------------")
-    print("Step 2:")
+        #pprint.pprint(option)
+    #print("--------------------------")
+    #print("Step 2:")
     if step2['score_me'] > step2['score_opp']:
         step2['championship_winner'] = 'Me'
     elif step2['score_opp'] > step2['score_me']:
         step2['championship_winner'] = 'Opponent'
     else:
         step2['championship_winner'] = 'Draw'
-    pprint.pprint(step2)
-    print("--------------------------")
+    #pprint.pprint(step2)
+    #print("--------------------------")
 
+    print({'part1': option['score_me'], 'part2' : step2['score_me']})
     return {'part1': option['score_me'], 'part2' : step2['score_me']}
 
 def is_valid_file(parser, arg):

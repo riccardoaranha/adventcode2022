@@ -4,17 +4,17 @@ from sortedcontainers import SortedList
 
 Pair = namedtuple("Pair", ["value", "id"])
 
-def printTopX(list : SortedList, x):
+def getTopX(list : SortedList, x):
     total = 0
-    print("--------------------------")
-    print ("Top %d Cals" % x)
+    #print("--------------------------")
+    #print ("Top %d Cals" % x)
     i = 0
     for qty in list.islice(stop=x):
         i += 1
         total += qty.value
-        print("[%dº][id=%d]: %d" % (i, qty.id, qty.value))
-    print("Total Top %d: %d" % (x, total))
-    print("--------------------------")
+        #print("[%dº][id=%d]: %d" % (i, qty.id, qty.value))
+    #print("Total Top %d: %d" % (x, total))
+    #print("--------------------------")
     return total
     
 def main(f: io.TextIOWrapper):
@@ -39,10 +39,11 @@ def main(f: io.TextIOWrapper):
     id += 1
     curElf = 0
 
-    total1 = printTopX(qties, 1)
-    total2 = printTopX(qties, 3)
-    print("Elfs count: %d" % qties.__len__())
-    print("Total Cals: %d" % totalCals)
+    total1 = getTopX(qties, 1)
+    total2 = getTopX(qties, 3)
+    #print("Elfs count: %d" % qties.__len__())
+    #print("Total Cals: %d" % totalCals)
+    print({'part1': total1, 'part2' : total2})
     return {'part1': total1, 'part2' : total2}
 
 

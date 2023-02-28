@@ -47,11 +47,11 @@ def main(f: io.TextIOWrapper):
     for stack in stacks2:
         finals2 += stack[0]
     
-    print("Top of pile, CrateMover 9000:")
-    print(finals1)    
-    print("Top of pile, CrateMover 9001:")
-    print(finals2)
-
+    #print("Top of pile, CrateMover 9000:")
+    #print(finals1)    
+    #print("Top of pile, CrateMover 9001:")
+    #print(finals2)
+    print({'part1': finals1, 'part2' : finals2})
     return {'part1': finals1, 'part2' : finals2}
 
 def is_valid_file(parser, arg):

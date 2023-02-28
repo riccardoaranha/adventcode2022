@@ -13,11 +13,13 @@ from day09.day09 import main as day09
 
 class TestResults(unittest.TestCase):
     def dayXX(self, day, e1, e2, i1, i2):
+        print("\nTesting day %02d" %day)
         f = open('day%02d/example.txt' % day, 'r')
         unittest.TestCase().assertDictEqual( {'part1': e1, 'part2' : e2}, globals()['day%02d' % day](f))
-        
+        f.close()
         f = open('day%02d/input.txt' % day, 'r')
         unittest.TestCase().assertDictEqual( {'part1': i1, 'part2' : i2}, globals()['day%02d' % day](f))
+        f.close()
 
     def test_day01(self):
         self.dayXX(1, 24000, 45000, 75622, 213159)

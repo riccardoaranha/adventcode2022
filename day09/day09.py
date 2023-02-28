@@ -49,7 +49,7 @@ def main(f: io.TextIOWrapper):
 
     part1 = len(unique)
     part2 = len(unique2)
-    print(part1, part2)
+    print({'part1': part1, 'part2' : part2})
     return {'part1': part1, 'part2' : part2}
 
 

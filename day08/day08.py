@@ -67,8 +67,8 @@ def main(f: io.TextIOWrapper):
                 sc = cont2[0]*cont2[1]*cont2[2]*cont2[3]
                 if sc > sc_high:
                     sc_high = sc
-    print('Total:', cont1)
-    print('Scenic Score:', sc_high)
+
+    print({'part1': cont1, 'part2' : sc_high})
     return {'part1': cont1, 'part2' : sc_high}
 
 

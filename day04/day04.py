@@ -41,9 +41,9 @@ def main(f: io.TextIOWrapper):
         if elfs[0][1] >= elfs[1][0]:
             overlapped +=1
     
-    print("Total contained: %d" % contained)
-    print("Total overlapped: %d" % overlapped)
-    
+    #print("Total contained: %d" % contained)
+    #print("Total overlapped: %d" % overlapped)
+    print({'part1': contained, 'part2' : overlapped})
     return {'part1': contained, 'part2' : overlapped}
 
 def is_valid_file(parser, arg):

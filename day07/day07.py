@@ -105,15 +105,16 @@ def main(f: io.TextIOWrapper):
     walk_calc(tree)
     #walk_print(tree, 1)
     part1 = walk_filter01(tree, 100000)
-    print('Part 1 - Size: ', part1)
+    #print('Part 1 - Size: ', part1)
 
     site_total = tree.__getattribute__('size')
     capacity =  70000000
     necessity = 30000000
     min_deletion = site_total - (capacity - necessity)
     part2 = walk_filter02(tree, min_deletion, capacity)
-    print('Part 2 - Size: ', part2)
+    #print('Part 2 - Size: ', part2)
     
+    print({'part1': part1, 'part2' : part2})
     return {'part1': part1, 'part2' : part2}
 
 

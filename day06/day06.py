@@ -21,9 +21,10 @@ def main(f: io.TextIOWrapper):
         buffer1, buffer2 = 4, 14
         index1 = find(line, buffer1)
         index2 = find(line, buffer2)
-        print ("First char with buffer %d is %c, on index %d" % (buffer1, line[index1], index1))
-        print ("First char with buffer %d is %c, on index %d" % (buffer2, line[index2], index2))
+        #print ("First char with buffer %d is %c, on index %d" % (buffer1, line[index1], index1))
+        #print ("First char with buffer %d is %c, on index %d" % (buffer2, line[index2], index2))
     
+    print ({'part1': index1, 'part2' : index2})
     return {'part1': index1, 'part2' : index2}
         
 def is_valid_file(parser, arg):

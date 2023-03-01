@@ -60,8 +60,8 @@ def is_valid_file(parser, arg):
         return open(arg, 'r')  # return an open file handle
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog = 'dayXX',
-                                     description = 'Advent of Code Day XX Template Start ',
+    parser = argparse.ArgumentParser(prog = 'day09',
+                                     description = 'Advent of Code Day 09 Template Start ',
                                      epilog = 'Created by Riccardo Aranha')
     parser.add_argument('inputfile', 
                         nargs='?', 

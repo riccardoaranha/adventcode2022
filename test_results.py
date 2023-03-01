@@ -9,7 +9,7 @@ from day06.day06 import main as day06
 from day07.day07 import main as day07
 from day08.day08 import main as day08
 from day09.day09 import main as day09
-
+from day10.day10 import main as day10
 
 class TestResults(unittest.TestCase):
     def dayXX(self, day, e1, e2, i1, i2):
@@ -19,6 +19,7 @@ class TestResults(unittest.TestCase):
         f.close()
         f = open('day%02d/input.txt' % day, 'r')
         unittest.TestCase().assertDictEqual( {'part1': i1, 'part2' : i2}, globals()['day%02d' % day](f))
+        print("Passou input")
         f.close()
 
     def test_day01(self):
@@ -47,6 +48,22 @@ class TestResults(unittest.TestCase):
 
     def test_day09(self):
         self.dayXX(9, 13, 1, 6464, 2604)
+
+    def test_day10(self):
+        val1 =  '##..##..##..##..##..##..##..##..##..##..\n'\
+                '###...###...###...###...###...###...###.\n'\
+                '####....####....####....####....####....\n'\
+                '#####.....#####.....#####.....#####.....\n'\
+                '######......######......######......####\n'\
+                '#######.......#######.......#######.....\n'
+        
+        val2 =  '###..####.###...##....##.####.#....#..#.\n'\
+                '#..#....#.#..#.#..#....#.#....#....#.#..\n'\
+                '###....#..#..#.#..#....#.###..#....##...\n'\
+                '#..#..#...###..####....#.#....#....#.#..\n'\
+                '#..#.#....#....#..#.#..#.#....#....#.#..\n'\
+                '###..####.#....#..#..##..####.####.#..#.\n'
+        self.dayXX(10, 13140, val1, 11220, val2)
 
 if __name__ == '__main__':
     unittest.main()
